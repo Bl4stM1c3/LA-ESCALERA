@@ -1,0 +1,31 @@
+#POSIBLE SOLUCION AL EJERICIO 69 DE https://retosdeprogramacion.com/ejercicios/
+#Crea una función que dibuje una escalera según su número de escalones.
+# * - Si el número es positivo, será ascendente de izquiera a derecha.
+# * - Si el número es negativo, será descendente de izquiera a derecha.
+# * - Si el número es cero, se dibujarán dos guiones bajos (__).
+# *
+# * Ejemplo: 4
+# *         _
+# *       _|
+# *     _|
+# *   _|
+# * _|
+# *
+# */
+
+def escalera(escalones):
+    
+    if escalones > 0:
+        for escalon in range(escalones + 1):
+            espacios = "  " * (escalones - escalon)
+            peldaños = "__" if escalon == 0 else "_|"
+            print(f"{espacios}{peldaños}")
+        
+    elif escalones < 0:
+        for escalon in range(abs(escalones) + 1):
+            espacios = "  " * (escalon)
+            peldaños = "__" if escalon == 0 else "|_"
+            print(f"{espacios}{peldaños}")
+    else:
+        print("__")
+    
